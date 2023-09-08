@@ -8,10 +8,7 @@ current = os.path.dirname(os.path.realpath(__file__))
 parent = os.path.dirname(current)
 sys.path.append(parent)
 
-from appscripts import weather_api_script
-
-def funcion():
-    print('hola mmundo')
+from appscripts import spotify_etl
 
 default_args = {
     'owner': 'airflow',
@@ -22,12 +19,13 @@ default_args = {
 with DAG(
     dag_id='weather_api_DAG',
     default_args=default_args,
-    start_date=datetime(2023, 9, 6),
-    schedule_interval='0 0 * * *',
+    start_date=datetime(2023, 9, 8),
+    schedule_interval='0 */12 * * *',
+    catchup=True,
 ) as dag:
     task1 = PythonOperator(
-        task_id='weather_api_test',
-        python_callable=weather_api_script.etl_weather_data,
+        task_id='spotify_etl',
+        python_callable=spotify_etl.etl_spotify,
     )
 
 task1
