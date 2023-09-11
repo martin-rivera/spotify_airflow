@@ -26,7 +26,7 @@ def check_if_data_valid(df) -> bool:
 
 def etl_spotify():
 
-    DATABASE_LOCATION = "sqlite:///dags/my_played_tracks.sqlite"
+    DATABASE_LOCATION = "sqlite:///appscripts/my_played_tracks.sqlite"
     AUTH_URL = 'https://accounts.spotify.com/authorize'
     USER_ID = "tokipoke"
     CLIENT_ID = "71d95ba5fd1d484fbe447cf3f541deba"
@@ -78,7 +78,7 @@ def etl_spotify():
 
     engine = sqlalchemy.create_engine(DATABASE_LOCATION)
 
-    conn = sqlite3.connect("my_played_tracks.sqlite")
+    conn = sqlite3.connect("./appscripts/my_played_tracks.sqlite")
     cursor = conn.cursor()
 
     query= """
