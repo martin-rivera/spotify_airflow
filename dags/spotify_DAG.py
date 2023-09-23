@@ -17,7 +17,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id='weather_api_DAG',
+    dag_id='spotify_DAG',
     default_args=default_args,
     start_date=datetime(2023, 9, 8),
     schedule_interval='0 */12 * * *',
