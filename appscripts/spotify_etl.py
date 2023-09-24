@@ -35,6 +35,9 @@ def etl_spotify():
     USER_ID = credentials_dict["USER_ID"]
     CLIENT_ID = credentials_dict["CLIENT_ID"]
     CLIENT_SECRET_ID = credentials_dict["CLIENT_SECRET_ID"]
+    USER_ID = credentials_dict["USER_ID"]
+    CLIENT_ID = credentials_dict["CLIENT_ID"]
+    CLIENT_SECRET_ID = credentials_dict["CLIENT_SECRET_ID"]
     SCOPE = "user-read-recently-played"
     SPOTIPY_REDIRECT_URI = "https://google.com"
 
