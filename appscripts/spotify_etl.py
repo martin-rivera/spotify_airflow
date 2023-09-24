@@ -10,6 +10,7 @@ import base64
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import json
+import json
 
 def check_if_data_valid(df) -> bool:
 
@@ -31,6 +32,9 @@ def etl_spotify():
 
     DATABASE_LOCATION = "sqlite:///appscripts/my_played_tracks.sqlite"
     AUTH_URL = 'https://accounts.spotify.com/authorize'
+    USER_ID = credentials_dict["USER_ID"]
+    CLIENT_ID = credentials_dict["CLIENT_ID"]
+    CLIENT_SECRET_ID = credentials_dict["CLIENT_SECRET_ID"]
     USER_ID = credentials_dict["USER_ID"]
     CLIENT_ID = credentials_dict["CLIENT_ID"]
     CLIENT_SECRET_ID = credentials_dict["CLIENT_SECRET_ID"]
